@@ -1,0 +1,15 @@
+@theme "vitrum.rasi"
+configuration {
+	power-menu: "rofi-power-menu";
+	terminal: "kitty";
+	modi: "combi,drun,window,calc,emoji,ssh";
+	combi-modi: "drun,window,ssh,power-menu";
+	display-combi: "Rofi";
+	diplay-calc: "Calculator";
+	display-drun: "App";
+	display-window: "Window";
+	display-emoji: "Emoji";
+	drun-display-format: "{icon} {name}";
+	window-display-format: "{name}";
+	icon-theme: "Papirus Dark"; 
+}

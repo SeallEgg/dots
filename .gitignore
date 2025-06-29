@@ -1,0 +1,6 @@
+# Kando
+.config/kando/session
+.config/kando/extensions
+SingletonLock
+SingletonSocket
+SingletonCookie

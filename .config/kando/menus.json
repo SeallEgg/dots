@@ -1,0 +1,750 @@
+{
+  "menus": [
+    {
+      "shortcut": "Control+Space",
+      "shortcutID": "kde",
+      "centered": false,
+      "root": {
+        "type": "submenu",
+        "name": "KDE",
+        "icon": "all-menus.svg",
+        "iconTheme": "kando",
+        "children": [
+          {
+            "type": "submenu",
+            "name": "Essentials",
+            "icon": "apps",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "submenu",
+                "name": "Folders",
+                "icon": "file-item.svg",
+                "iconTheme": "kando",
+                "data": {},
+                "children": [
+                  {
+                    "type": "submenu",
+                    "name": "Stuff",
+                    "icon": "star_shine",
+                    "iconTheme": "material-symbols-rounded",
+                    "data": {},
+                    "children": [
+                      {
+                        "type": "command",
+                        "name": "Stuff",
+                        "icon": "star",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      },
+                      {
+                        "type": "command",
+                        "name": "Desktop",
+                        "icon": "desktop_windows",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff/Desktop",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      },
+                      {
+                        "type": "command",
+                        "name": "Desktop",
+                        "icon": "video_library",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff/Videos\n",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      },
+                      {
+                        "type": "command",
+                        "name": "Pictures",
+                        "icon": "photo",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff/Pictures\n",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      },
+                      {
+                        "type": "command",
+                        "name": "Documents",
+                        "icon": "edit_document",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff/Documents",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "command",
+                    "name": "Downloads",
+                    "icon": "download",
+                    "iconTheme": "material-symbols-rounded",
+                    "data": {
+                      "command": "dolphin ~/Downloads",
+                      "detached": true,
+                      "isolated": true,
+                      "delayed": false
+                    }
+                  },
+                  {
+                    "type": "command",
+                    "name": "Root",
+                    "icon": "file-item.svg",
+                    "iconTheme": "kando",
+                    "data": {
+                      "command": "dolphin /",
+                      "detached": true,
+                      "isolated": true,
+                      "delayed": false
+                    }
+                  },
+                  {
+                    "type": "command",
+                    "name": "Home",
+                    "icon": "home",
+                    "iconTheme": "material-symbols-rounded",
+                    "data": {
+                      "command": "dolphin ~",
+                      "detached": true,
+                      "isolated": true,
+                      "delayed": false
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "zen-browser"
+                },
+                "name": "Zen",
+                "icon": "zenbrowser",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "kitty "
+                },
+                "name": "Terminal",
+                "icon": "terminal",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "name": "Whatsapp",
+                "icon": "whatsapp",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "zapzap",
+                  "detached": true,
+                  "isolated": false,
+                  "delayed": false
+                }
+              },
+              {
+                "type": "command",
+                "name": "Discord",
+                "icon": "discord",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "vesktop",
+                  "detached": true,
+                  "isolated": false,
+                  "delayed": false
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Gaming",
+            "icon": "videogame_asset",
+            "iconTheme": "material-symbols-rounded",
+            "data": {},
+            "children": [
+              {
+                "type": "command",
+                "name": "Lutris",
+                "icon": "lutris",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "lutris",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                },
+                "angle": 60
+              },
+              {
+                "type": "command",
+                "name": "Steam",
+                "icon": "steam",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "steam",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              },
+              {
+                "type": "command",
+                "name": "Minecraft",
+                "icon": "minetest",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "prismlauncher",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Controls",
+            "icon": "settings-item.svg",
+            "iconTheme": "kando",
+            "data": {},
+            "children": [
+              {
+                "type": "command",
+                "name": "System Monitor",
+                "icon": "monitor_heart",
+                "iconTheme": "material-symbols-rounded",
+                "data": {
+                  "command": "plasma-systemmonitor",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              },
+              {
+                "type": "hotkey",
+                "name": "Lock",
+                "icon": "lock",
+                "iconTheme": "material-symbols-rounded",
+                "data": {
+                  "hotkey": "MetaLeft+KeyL",
+                  "delayed": true
+                }
+              },
+              {
+                "type": "hotkey",
+                "name": "Power Options",
+                "icon": "power_settings_new",
+                "iconTheme": "material-symbols-rounded",
+                "data": {
+                  "hotkey": "ControlLeft+AltLeft+Delete",
+                  "delayed": true
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Media",
+            "icon": "play_circle",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaTrackNext",
+                  "delayed": false
+                },
+                "name": "Next Track",
+                "icon": "skip_next",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 90
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaPlayPause",
+                  "delayed": false
+                },
+                "name": "Play / Pause",
+                "icon": "play_pause",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "AudioVolumeMute",
+                  "delayed": false
+                },
+                "name": "Mute",
+                "icon": "music_off",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaTrackPrevious",
+                  "delayed": false
+                },
+                "name": "Previous Track",
+                "icon": "skip_previous",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 270
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Productivity",
+            "icon": "edit_document",
+            "iconTheme": "material-symbols-rounded",
+            "data": {},
+            "children": [
+              {
+                "type": "command",
+                "name": "Obsidian",
+                "icon": "obsidian",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "obsidian",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Creative",
+            "icon": "brush",
+            "iconTheme": "material-symbols-rounded",
+            "data": {},
+            "children": [
+              {
+                "type": "command",
+                "name": "OBS",
+                "icon": "obsstudio",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "flatpak run com.obsproject.Studio/x86_64/stable  ",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              },
+              {
+                "type": "command",
+                "name": "GIMP",
+                "icon": "gimp",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "gimp",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "shortcut": "Control+Space",
+      "shortcutID": "hyprland",
+      "centered": false,
+      "root": {
+        "type": "submenu",
+        "name": "Hyprland",
+        "icon": "all-menus.svg",
+        "iconTheme": "kando",
+        "children": [
+          {
+            "type": "submenu",
+            "name": "Essentials",
+            "icon": "apps",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "submenu",
+                "name": "Folders",
+                "icon": "file-item.svg",
+                "iconTheme": "kando",
+                "data": {},
+                "children": [
+                  {
+                    "type": "submenu",
+                    "name": "Stuff",
+                    "icon": "star_shine",
+                    "iconTheme": "material-symbols-rounded",
+                    "data": {},
+                    "children": [
+                      {
+                        "type": "command",
+                        "name": "Stuff",
+                        "icon": "star",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      },
+                      {
+                        "type": "command",
+                        "name": "Desktop",
+                        "icon": "desktop_windows",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff/Desktop",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      },
+                      {
+                        "type": "command",
+                        "name": "Desktop",
+                        "icon": "video_library",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff/Videos\n",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      },
+                      {
+                        "type": "command",
+                        "name": "Pictures",
+                        "icon": "photo",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff/Pictures\n",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      },
+                      {
+                        "type": "command",
+                        "name": "Documents",
+                        "icon": "edit_document",
+                        "iconTheme": "material-symbols-rounded",
+                        "data": {
+                          "command": "dolphin ~/Stuff/Documents",
+                          "detached": true,
+                          "isolated": true,
+                          "delayed": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "command",
+                    "name": "Downloads",
+                    "icon": "download",
+                    "iconTheme": "material-symbols-rounded",
+                    "data": {
+                      "command": "dolphin ~/Downloads",
+                      "detached": true,
+                      "isolated": true,
+                      "delayed": false
+                    }
+                  },
+                  {
+                    "type": "command",
+                    "name": "Root",
+                    "icon": "file-item.svg",
+                    "iconTheme": "kando",
+                    "data": {
+                      "command": "dolphin /",
+                      "detached": true,
+                      "isolated": true,
+                      "delayed": false
+                    }
+                  },
+                  {
+                    "type": "command",
+                    "name": "Home",
+                    "icon": "home",
+                    "iconTheme": "material-symbols-rounded",
+                    "data": {
+                      "command": "dolphin ~",
+                      "detached": true,
+                      "isolated": true,
+                      "delayed": false
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "zen-browser"
+                },
+                "name": "Zen",
+                "icon": "zenbrowser",
+                "iconTheme": "simple-icons"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "kitty "
+                },
+                "name": "Terminal",
+                "icon": "terminal",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "name": "Whatsapp",
+                "icon": "whatsapp",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "zapzap --enable-features=UseOzonePlatform --ozone-platform=wayland",
+                  "detached": true,
+                  "isolated": false,
+                  "delayed": false
+                }
+              },
+              {
+                "type": "command",
+                "name": "Discord",
+                "icon": "discord",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland",
+                  "detached": true,
+                  "isolated": false,
+                  "delayed": false
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Gaming",
+            "icon": "videogame_asset",
+            "iconTheme": "material-symbols-rounded",
+            "data": {},
+            "children": [
+              {
+                "type": "command",
+                "name": "Lutris",
+                "icon": "lutris",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "lutris",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                },
+                "angle": 60
+              },
+              {
+                "type": "command",
+                "name": "Steam",
+                "icon": "steam",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "steam",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              },
+              {
+                "type": "command",
+                "name": "Minecraft",
+                "icon": "minetest",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "prismlauncher",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Controls",
+            "icon": "settings-item.svg",
+            "iconTheme": "kando",
+            "data": {},
+            "children": [
+              {
+                "type": "command",
+                "name": "System Monitor",
+                "icon": "monitor_heart",
+                "iconTheme": "material-symbols-rounded",
+                "data": {
+                  "command": "plasma-systemmonitor",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              },
+              {
+                "type": "hotkey",
+                "name": "Lock",
+                "icon": "lock",
+                "iconTheme": "material-symbols-rounded",
+                "data": {
+                  "hotkey": "MetaLeft+KeyL",
+                  "delayed": true
+                }
+              },
+              {
+                "type": "hotkey",
+                "name": "Power Options",
+                "icon": "power_settings_new",
+                "iconTheme": "material-symbols-rounded",
+                "data": {
+                  "hotkey": "ControlLeft+AltLeft+Delete",
+                  "delayed": true
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Media",
+            "icon": "play_circle",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaTrackNext",
+                  "delayed": false
+                },
+                "name": "Next Track",
+                "icon": "skip_next",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 90
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaPlayPause",
+                  "delayed": false
+                },
+                "name": "Play / Pause",
+                "icon": "play_pause",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "AudioVolumeMute",
+                  "delayed": false
+                },
+                "name": "Mute",
+                "icon": "music_off",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaTrackPrevious",
+                  "delayed": false
+                },
+                "name": "Previous Track",
+                "icon": "skip_previous",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 270
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Productivity",
+            "icon": "edit_document",
+            "iconTheme": "material-symbols-rounded",
+            "data": {},
+            "children": [
+              {
+                "type": "command",
+                "name": "Obsidian",
+                "icon": "obsidian",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Creative",
+            "icon": "brush",
+            "iconTheme": "material-symbols-rounded",
+            "data": {},
+            "children": [
+              {
+                "type": "command",
+                "name": "OBS",
+                "icon": "obsstudio",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "flatpak run com.obsproject.Studio/x86_64/stable  ",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              },
+              {
+                "type": "command",
+                "name": "GIMP",
+                "icon": "gimp",
+                "iconTheme": "simple-icons",
+                "data": {
+                  "command": "gimp",
+                  "detached": true,
+                  "isolated": true,
+                  "delayed": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "collections": [
+    {
+      "name": "Favorites",
+      "icon": "favorite",
+      "iconTheme": "material-symbols-rounded",
+      "tags": [
+        "favs"
+      ]
+    }
+  ]
+}
