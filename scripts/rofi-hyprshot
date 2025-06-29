@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SELECTED=$(printf "Region\0icon\x1fedit-select-all\nWindow\0icon\x1fwindow-new\nMonitor\0icon\x1fcomputer" | rofi -dmenu -p "Hyprshot" -show-icons)
+
+if [ -n "$SELECTED" ]; then
+    case "$SELECTED" in
+        "Region")
+            hyprshot -m region -o ~/Pictures/Screenshots
+            ;;
+        "Window")
+            hyprshot -m window -o ~/Pictures/Screenshots
+            ;;
+        "Monitor")
+            hyprshot -m output -o ~/Pictures/Screenshots
+            ;;
+    esac
+fi
