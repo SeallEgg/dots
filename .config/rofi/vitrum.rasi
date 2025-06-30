@@ -1,94 +1,51 @@
 @import "colors.rasi"
+
 * {
-    font:   "SF Pro Text Bold 12";
-
-    bg0:     @surface;
-    bg1:     @surface-dim;
-    fg0:     @surface-bright;
-
-    accent-color:     @primary;
-    urgent-color:     @secondary;
-
-    background-color:   transparent;
-    text-color:         @secondary;
-
-    margin:     0;
-    padding:    0;
-    spacing:    0;
+	background-color: transparent; 
+	vertical-align: 0.5;
+	font: "Aileron Regular 16";
+	text-color: @on-surface; 
 }
 
 window {
-    location:   center;
-    border-radius: 20px;
-    width:      720;
-
-    background-color: @surface;
+	border-radius: 20px;
+	width: 680;
 }
 
 inputbar {
-    spacing:    8px;
-    padding:    20 px;
-
-    background-color:   #33333311;
+	padding: 12;
+	background-color: @surface-dim;
 }
 
-prompt, entry, element-icon, element-text {
-    vertical-align: 0.5;
-}
-
-prompt {
-    text-color: @accent-color;
-}
-
-textbox {
-    padding:            12px;
-    background-color:   @bg1;
+prompt { 
+	text-color: @primary;
+	background-color: @surface-container;
+	border-radius: 12px;
+	margin: 0 2;
+	padding: 8 10;
+	font: "Aileron Heavy 16";
 }
 
 listview {
-    padding:    3px;
-    lines:      6;
-    columns:    1;
-    fixed-height:   false;
+	background-color: @surface;
+	fixed-height: false;
+	lines: 6;
 }
 
 element {
-    padding:    8px;
-    spacing:    8px;
-}
-
-element normal normal {
-    text-color: @fg0;
-}
-
-element normal urgent {
-    text-color: @urgent-color;
-}
-
-element normal active {
-    text-color: @accent-color;
-}
-
-element alternate active {
-    text-color: @accent-color;
-}
-
-element selected {
-    text-color: @bg0;
-}
-
-element selected normal, element selected active {
-    background-color:   @accent-color;
-}
-
-element selected urgent {
-    background-color:   @urgent-color;
+	padding: 10 18;
 }
 
 element-icon {
-    size:   2.3em;
+	size: 2em;
 }
 
-element-text {
-    text-color: inherit;
+element-text{
+	margin: 0 8;
+	text-color: inherit;
+}
+
+element selected{
+	background-color: @primary;
+	text-color: @surface-container;
 }
