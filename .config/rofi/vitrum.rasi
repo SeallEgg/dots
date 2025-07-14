@@ -9,25 +9,25 @@
 
 window {
 	border-radius: 20px;
-	width: 680;
+	width: 600;
 }
 
 inputbar {
 	padding: 12;
-	background-color: @surface-dim;
+	background-color: @surface-container;
 }
 
 prompt { 
 	text-color: @primary;
-	background-color: @surface-container;
+	background-color: @on-primary;
 	border-radius: 12px;
-	margin: 0 2;
+	margin: 0 8;
 	padding: 8 10;
 	font: "Geist Bold 16";
 }
 
 listview {
-	background-color: @surface;
+	background-color: @surface-trans;
 	fixed-height: false;
 	lines: 6;
 }
