@@ -16,3 +16,7 @@ post_hook = "pkill -SIGUSR1 kitty"
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.conf'
 output_path = '~/.config/rofi/colors.rasi'
+
+[templates.quickshell]
+input_path = '~/.config/matugen/templates/quickshell-colors.conf'
+output_path = '~/.config/quickshell/settings/colors.json'
