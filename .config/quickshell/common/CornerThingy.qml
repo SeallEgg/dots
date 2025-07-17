@@ -1,9 +1,6 @@
-// A quick & easy way to add those fancy inverted rounded corners
+// CornerThingy mk2
+// A quick & easy way to add even fancier corners
 
-// All you need to do is give it an array of corners
-// 0 is top left, 1 is top right, 2 is bottom left, 3 is bottom right
-
-// Corners are perfect quarter circles, radius is defined by cornerSize
 
 import QtQuick
 import QtQuick.Shapes
@@ -12,94 +9,124 @@ Item {
     id: root
     anchors.fill: parent
 
-    property int cornerSize: 20
+    property var cornerType: "cubic" // cubic, rounded or inverted
+    property int cornerHeight: 30
+    property int cornerWidth: cornerHeight // default is square, but you can set a separate width
+     
     property color color: "#000000"
-    property var corners: [0]
-
+    property var corners: [0] // 0 is top right, 1 is top left, 2 is bottom left, 3 is bottom right
 
     Repeater{
-        model: root.corners
+        model: root.cornerType === "cubic" ? root.corners : 0
         delegate: Shape {
-            id: shape
+            id: cubicShape
             asynchronous: true
-            fillMode: Shape.PreserveAspectFit
             preferredRendererType: Shape.CurveRenderer
-            width: root.cornerSize
-            height: root.cornerSize
+            width: root.cornerWidth
+            height: root.cornerHeight
 
             property int currentCorner: modelData
 
-            anchors.left: {
-                switch (currentCorner) {
-                case 0:
-                case 2:
-                    return root.left
-                default:
-                    return undefined
-                }
-            }
-            anchors.right: {
-                switch (currentCorner) {
-                case 1:
-                case 3:
-                    return root.right
-                default:
-                    return undefined
-                }
-            }
-            anchors.top: {
-                switch (currentCorner) {
-                case 0:
-                case 1:
-                    return root.top
-                default:
-                    return undefined
-                }
-            }
-            anchors.bottom: {
-                switch (currentCorner) {
-                case 2:
-                case 3:
-                    return root.bottom
-                default:
-                    return undefined
-                }
-            }
+            anchors.right: currentCorner === 0 || currentCorner === 3 ? root.right : undefined
+            anchors.left: currentCorner === 1 || currentCorner === 2 ? root.left : undefined
+            anchors.top: currentCorner <= 1 ? root.top : undefined
+            anchors.bottom: currentCorner > 1 ? root.bottom : undefined
 
             ShapePath {
-                startX: 0
-                startY: 0
-                strokeWidth: 0
                 fillColor: root.color
+                strokeWidth: 0
+                    
+                startX: cubicShape.currentCorner % 2 === 0 ? 0 : root.cornerWidth; startY: 0
 
-                PathLine { x: 0; y: shape.height }
-                PathLine { x: shape.width; y: shape.height }
-                PathArc { 
-                    x: 0
-                    y: 0
-                    radiusX: shape.width
-                    radiusY: shape.height
+                PathCubic {
+                    x: cubicShape.currentCorner % 2 === 0 ? root.cornerWidth : 0; y: root.cornerHeight
+                    relativeControl1X: cubicShape.currentCorner % 2 === 0 ? root.cornerWidth/2 : -root.cornerWidth/2; relativeControl1Y: 0
+                    relativeControl2X: cubicShape.currentCorner % 2 === 0 ? root.cornerWidth/2 : -root.cornerWidth/2; relativeControl2Y: root.cornerHeight
+                }
+
+                PathLine {
+                    x: cubicShape.currentCorner % 2 === 0 ? root.cornerWidth : 0; y: 0
                 }
             }
 
             transform: Rotation {
-                origin.x: shape.width / 2
-                origin.y: shape.height / 2
-                angle: {
-                    switch (currentCorner) {
-                        case 0: 
-                            return 90
-                        case 1:
-                            return 180
-                        case 2: 
-                            return 0
-                        case 3: 
-                            return 270
-                        default:
-                            return 90
-                    }
-                } 
+            origin.x: root.cornerWidth / 2
+            origin.y: root.cornerHeight / 2
+            angle: currentCorner > 1 ? 180 : 0
             }
         }
     }
+    Repeater{
+        model: root.cornerType === "rounded" ? root.corners : 0
+        delegate: Shape {
+            id: roundedShape
+            asynchronous: true
+            preferredRendererType: Shape.CurveRenderer
+            width: root.cornerWidth
+            height: root.cornerHeight
+
+            property int currentCorner: modelData
+
+            anchors.right: currentCorner === 0 || currentCorner === 3 ? root.right : undefined
+            anchors.left: currentCorner === 1 || currentCorner === 2 ? root.left : undefined
+            anchors.top: currentCorner <= 1 ? root.top : undefined
+            anchors.bottom: currentCorner > 1 ? root.bottom : undefined
+
+            ShapePath {
+                startX: 0
+                startY: 0
+                strokeWidth: -1
+                fillColor: root.color
+
+                PathLine {x: root.cornerWidth; y: 0 }
+                PathLine { x: root.cornerWidth; y: root.cornerHeight }
+                PathArc { 
+                    x: 0; y: 0
+                    radiusX: root.cornerWidth; radiusY: root.cornerHeight
+                }
+            } 
+            transform: Rotation {
+                origin.x: root.cornerWidth / 2
+                origin.y: root.cornerHeight / 2
+                angle: currentCorner*-90
+                } 
+        }       
+    }
+
+    Repeater{
+        model: root.cornerType === "inverted" ? root.corners : 0
+        delegate: Shape {
+            id: invertedShape
+            asynchronous: true
+            preferredRendererType: Shape.CurveRenderer
+            width: root.cornerWidth
+            height: root.cornerHeight
+
+            property int currentCorner: modelData
+
+            anchors.right: currentCorner === 0 || currentCorner === 3 ? root.right : undefined
+            anchors.left: currentCorner === 1 || currentCorner === 2 ? root.left : undefined
+            anchors.top: currentCorner <= 1 ? root.top : undefined
+            anchors.bottom: currentCorner > 1 ? root.bottom : undefined
+
+            ShapePath {
+                startX: 0
+                startY: 0
+                strokeWidth: -1
+                fillColor: root.color
+
+                PathArc { 
+                    x: root.cornerWidth; y: root.cornerHeight
+                    radiusX: root.cornerWidth; radiusY: root.cornerHeight
+                }
+                PathLine { x: root.cornerWidth; y: 0}
+            } 
+            transform: Rotation {
+                origin.x: root.cornerWidth / 2
+                origin.y: root.cornerHeight / 2
+                angle: currentCorner*-90
+                } 
+        }       
+    }
 }
+        
