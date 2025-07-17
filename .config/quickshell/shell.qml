@@ -9,5 +9,4 @@ import "settings"
 
 Scope{
     TopBar{}
-    BottomBar{}
 }

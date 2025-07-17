@@ -1,62 +1,99 @@
 import Quickshell
-import Quickshell.Io
+import Quickshell.Widgets
 import Quickshell.Services.SystemTray 
 import QtQuick
+import QtQuick.Shapes
 
 import "root:/common"
 import "root:/settings"
+import "root:/assets"
 
 Scope{
-    property int barHeight: 36
-    property int cornerHeight: 28
-    property var backgroundColor: Theme.palette.background 
+    property int barHeight: 40
+
+    property int centerWidth: 500
+    property int leftWidth: 200
+    property int rightWidth: 200
+
+    property int cornerHeight: 40
+    property var backgroundColor: Theme.palette.surface 
 
     PanelWindow {
-            id: topbar
+            id: topBar
             color: 'transparent'
             exclusiveZone: barHeight      
-            implicitHeight: barHeight+cornerHeight
+            implicitHeight: barHeight
             anchors {
                 top: true
                 left: true
                 right: true
             }
-            Item {
-                id: background
-                anchors.fill: parent
 
-                Rectangle {
+            WrapperRectangle{
+                id: leftBar
+                color: backgroundColor
+                anchors.left: parent.left
+                Row{
                     height: barHeight
-                    width: parent.width
-                    color: backgroundColor
-                }
-                
-                Item {
-                    id: cornerArea
-                    height: cornerHeight
-                    width: parent.width
-                    y: barHeight
-
-                    CornerThingy {
-                        corners: [0,1]
-                        cornerSize: cornerHeight
-                        color: backgroundColor
-                    }
+                    ClockDisplay{width: 90}
                 }
             }
+
             Item {
-                id: barcontainer
-                implicitHeight: barHeight
-                implicitWidth: parent.width
+                id: leftCornerArea
+                height: barHeight
+                anchors.left: leftBar.right
+                anchors.right: centerBar.left
 
-                ClockDisplay {}
+                CornerThingy {
+                   anchors.fill: parent
+                    corners: [0, 1]
+                    cornerType: "cubic"
+                    cornerHeight: 40
+                    cornerWidth: 50
+                    color: backgroundColor
+                }
+            }
 
-                Item {
-                    id: rightContainer
-                    anchors.rightMargin: parent
-                    
-                 //   SysTray{}
+            WrapperRectangle{
+                id: centerBar
+                color: backgroundColor
+                anchors.centerIn: parent
+                Row{
+                    height: barHeight
+                    ClockDisplay{width: 90}
+                    ClockDisplay{width: 90}
+                    ClockDisplay{width: 90}
+                    ClockDisplay{width: 90}
+                    ClockDisplay{width: 90}
+                }
+            }
+
+            Item {
+                id: rightCornerArea
+                height: barHeight
+                anchors.left: centerBar.right
+                anchors.right: rightBar.left
+
+                CornerThingy {
+                    anchors.fill: parent
+                    corners: [0, 1]
+                    cornerType: "cubic"
+                    cornerHeight: 40
+                    cornerWidth: 50
+                    color: backgroundColor
+                }
+            }
+
+            WrapperRectangle{
+                id: rightBar
+                color: backgroundColor
+                anchors.right: parent.right
+                Row{
+                    height: barHeight
+                    ClockDisplay{width: 90}
                 }
             }
     }
 }
+
