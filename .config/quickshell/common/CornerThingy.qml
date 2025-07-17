@@ -1,4 +1,4 @@
-// CornerThingy mk2
+// CornerThingy mk2 by SealEgg
 // A quick & easy way to add even fancier corners
 
 
