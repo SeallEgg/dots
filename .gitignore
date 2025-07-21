@@ -1,9 +1,10 @@
 .directory
-fish_variables
+.config/fish/fish_variables
 
 #Matugen Configs
 colors.conf
 colors.rasi
+colors.json
 
 # Kando
 .config/kando/session
