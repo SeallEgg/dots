@@ -21,7 +21,7 @@ prompt {
 	text-color: @primary;
 	background-color: @on-primary;
 	border-radius: 12px;
-	margin: 0 8;
+	margin: 0 6 0 0;
 	padding: 8 10;
 	font: "Geist Bold 16";
 }
