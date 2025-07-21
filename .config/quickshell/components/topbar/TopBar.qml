@@ -1,8 +1,8 @@
 import Quickshell
 import Quickshell.Widgets
-import Quickshell.Services.SystemTray 
 import QtQuick
 import QtQuick.Shapes
+import QtQuick.Effects
 
 import "root:/common"
 import "root:/settings"
@@ -16,7 +16,15 @@ Scope{
     property int rightWidth: 200
 
     property int cornerHeight: 40
-    property var backgroundColor: Theme.palette.surface 
+    property var backgroundColor: Theme.palette.surface
+
+    Image{
+    id: logo
+    source: "root:/assets/arch-linux-48.svg"
+    visible: false
+    sourceSize: Qt.size(48, 48)
+    height: 30; width: 30
+    }
 
     PanelWindow {
             id: topBar
@@ -35,7 +43,21 @@ Scope{
                 anchors.left: parent.left
                 Row{
                     height: barHeight
-                    ClockDisplay{width: 90}
+                    
+                    Item{
+                        id: cornerIcon
+                        height: barHeight
+                        width: 50
+
+                        MultiEffect{
+                            source: logo
+                            visible: true
+                            height: 30; width: 30
+                            anchors.centerIn: parent
+                            colorization: 1
+                            colorizationColor: Theme.palette.primary
+                        }
+                    }
                 }
             }
 
@@ -61,11 +83,7 @@ Scope{
                 anchors.centerIn: parent
                 Row{
                     height: barHeight
-                    ClockDisplay{width: 90}
-                    ClockDisplay{width: 90}
-                    ClockDisplay{width: 90}
-                    ClockDisplay{width: 90}
-                    ClockDisplay{width: 90}
+                    ClockDisplay{width: 400}
                 }
             }
 
@@ -91,7 +109,7 @@ Scope{
                 anchors.right: parent.right
                 Row{
                     height: barHeight
-                    ClockDisplay{width: 90}
+                    Tray {width: 90}
                 }
             }
     }
