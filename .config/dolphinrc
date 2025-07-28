@@ -1,0 +1,41 @@
+MenuBar=Disabled
+
+[ContentDisplay]
+DirectorySizeMode=ContentSize
+
+[ContextMenu]
+ShowAddToPlaces=false
+ShowSortBy=false
+ShowViewMode=false
+
+[General]
+LockPanels=false
+ShowFullPathInTitlebar=true
+ShowStatusBar=FullWidth
+Version=202
+ViewPropsTimestamp=2025,7,21,22,16,0.689
+
+[IconsMode]
+PreviewSize=80
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=48
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Enabled
+
+[MainWindow][Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly
+
+[PlacesPanel]
+IconSize=48
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,gdk-pixbuf-thumbnailer
+
+[Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly

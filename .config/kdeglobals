@@ -1,0 +1,13 @@
+[General]
+TerminalApplication=kitty
+
+[Icons]
+Theme=Papirus-Dark
+
+[KDE]
+ShowDeleteCommand=true
+widgetStyle=qt6ct-style
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
