@@ -1,5 +1,6 @@
 .directory
 .config/fish/fish_variables
+.stow-local-ignore
 
 #Matugen Configs
 colors.conf
