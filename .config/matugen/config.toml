@@ -8,11 +8,6 @@ input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
 post_hook = 'hyprctl reload'
 
-[templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors.conf'
-post_hook = "pkill -SIGUSR1 kitty"
-
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.conf'
 output_path = '~/.config/rofi/colors.rasi'
@@ -20,3 +15,7 @@ output_path = '~/.config/rofi/colors.rasi'
 [templates.quickshell]
 input_path = '~/.config/matugen/templates/quickshell-colors.conf'
 output_path = '~/.config/quickshell/settings/colors.json'
+
+[templates.discord]
+input_path = '~/.config/matugen/templates/discord-colors.css'
+output_path = '~/.config/vesktop/themes/midnight-discord.css'
