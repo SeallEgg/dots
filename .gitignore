@@ -1,8 +1,11 @@
 .directory
-.config/fish/fish_variables
 .stow-local-ignore
 
-#Matugen Configs
+# Micro
+micro/history
+micro/backups
+
+# Matugen Configs
 colors.conf
 colors.rasi
 colors.json
