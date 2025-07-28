@@ -1,0 +1,49 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+final_space = true
+version = 3
+
+[[blocks]]
+type = "rprompt"
+
+  [[blocks.segments]]
+  foreground = "#007ACC"
+  style = "plain"
+  template = " {{ .CurrentDate | date .Format }} "
+  type = "time"
+
+    [blocks.segments.properties]
+    time_format = "15:04:05"
+
+[[blocks]]
+alignment = "left"
+type = "prompt"
+
+  [[blocks.segments]]
+  background = "#ffffff"
+  foreground = "#100e23"
+  powerline_symbol = ""
+  style = "powerline"
+  template = " {{ .UserName }}@{{ .HostName }} "
+  type = "session"
+
+  [[blocks.segments]]
+  background = "#91ddff"
+  foreground = "#100e23"
+  powerline_symbol = ""
+  style = "powerline"
+  template = " {{ .Path }} "
+  type = "path"
+
+    [blocks.segments.properties]
+    folder_icon = ""
+    folder_separator_icon = "  "
+    home_icon = ""
+    style = "agnoster"
+
+  [[blocks.segments]]
+  background = "#95ffa4"
+  foreground = "#193549"
+  powerline_symbol = ""
+  style = "powerline"
+  template = " {{ .HEAD }} "
+  type = "git"
