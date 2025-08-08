@@ -2,7 +2,7 @@
 configuration {
 	power-menu: "rofi-power-menu";
 	terminal: "kitty";
-	modi: "combi,drun,window,calc,emoji,ssh";
+	modi: "combi";
 	combi-modi: "drun,window,ssh,power-menu";
 	display-combi: "Rofi";
 	diplay-calc: "Calculator";
