@@ -2,6 +2,7 @@
 .stow-local-ignore
 
 # Micro
+micro/buffers/history
 micro/history
 micro/backups
 
