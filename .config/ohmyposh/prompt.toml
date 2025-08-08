@@ -2,48 +2,72 @@
 final_space = true
 version = 3
 
-[[blocks]]
-type = "rprompt"
+[palette]
+os = "#FFFFFF"
+pink = "#F5BDE6"
+lavender = "#B7BDF8"
+blue = "#8AADF4"
+white = "#FFFFFF"
+text = "#000000"
 
-  [[blocks.segments]]
-  foreground = "#007ACC"
-  style = "plain"
-  template = " {{ .CurrentDate | date .Format }} "
-  type = "time"
-
-    [blocks.segments.properties]
-    time_format = "15:04:05"
+[transient_prompt]
+background = "transparent"
+foreground = "white"
+template = " ❯"
 
 [[blocks]]
 alignment = "left"
 type = "prompt"
 
   [[blocks.segments]]
-  background = "#ffffff"
-  foreground = "#100e23"
-  powerline_symbol = ""
-  style = "powerline"
-  template = " {{ .UserName }}@{{ .HostName }} "
+  background = "#2d2d2d"
+  foreground = "#5cceff"
+  style = "diamond"
+  trailing_diamond = ""
+  template = " {{.Icon}} "
+  type = "os"
+
+  [[blocks.segments]]
+  background = "#5cceff"
+  foreground = "p:text"
+  style = "diamond"
+  leading_diamond = ""
+  trailing_diamond = ""
+  template = " {{ .UserName }} "
   type = "session"
 
   [[blocks.segments]]
-  background = "#91ddff"
-  foreground = "#100e23"
-  powerline_symbol = ""
-  style = "powerline"
+  background = "#cc8323"
+  foreground = "p:text"
+  style = "diamond"
+  leading_diamond = ""
+  trailing_diamond = ""
   template = " {{ .Path }} "
   type = "path"
 
     [blocks.segments.properties]
-    folder_icon = ""
-    folder_separator_icon = "  "
-    home_icon = ""
-    style = "agnoster"
+    folder_icon = "  "
+    folder_separator_icon = "\ue0b1"
+    home_icon = "󰋜 "
+    style = "agnoster_short"
 
   [[blocks.segments]]
-  background = "#95ffa4"
-  foreground = "#193549"
-  powerline_symbol = ""
-  style = "powerline"
-  template = " {{ .HEAD }} "
+  background = "p:lavender"
+  foreground = "p:text"
+  style = "diamond"
+  leading_diamond = ""
+  trailing_diamond = ""
+  template = "  {{ .HEAD }}"
   type = "git"
+
+    [blocks.segments.properties]
+    branch_icon = " "
+    cherry_pick_icon = " "
+    commit_icon = " "
+    fetch_status = false
+    fetch_upstream_icon = false
+    merge_icon = " "
+    no_commits_icon = " "
+    rebase_icon = " "
+    revert_icon = " "
+    tag_icon = " "
