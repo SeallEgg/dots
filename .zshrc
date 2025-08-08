@@ -48,6 +48,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Binds
 bindkey "^[[3~" delete-char
+bindkey '^[[1;5C' forward-word     # Ctrl+right arrow
+bindkey '^[[1;5D' backward-word    # Ctrl+left arrow
 
 # Shell integrations
 eval "$(fzf --zsh)"
