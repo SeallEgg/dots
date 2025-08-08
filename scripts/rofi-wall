@@ -1,17 +1,19 @@
 #!/bin/bash
 
-MODE=$(printf "dark\0icon\x1fweather-clear-night \nlight\0icon\x1fweather-clear" | rofi -dmenu -p "Mode"  -show-icons)
+WALLPAPER_DIR="/home/$USER/Dotfiles/Wallpapers"
 
-WALLPAPER_DIR="/home/$USER/Pictures/Wallpapers/$MODE"
-
-SELECTED=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' \) | while read -r wallpaper; do
+SELECTED=$(find "$WALLPAPER_DIR" -type f | while read -r wallpaper; do
     filename=$(basename "$wallpaper")
     printf "%s\0icon\x1f%s\n" "$filename" "$wallpaper"
 
-done | rofi -dmenu -p "Wallpaper ($MODE mode)" -show-icons)
+done | rofi -dmenu -p "Wallpaper" -show-icons)
 
 WALLPAPER_PATH=$(find "$WALLPAPER_DIR" -type f -name "$SELECTED" | head -n1)
 
-if [ -n "$WALLPAPER_PATH" ]; then
-    matugen image --show-colors "$WALLPAPER_PATH" -m "$MODE"
+if [[ -n "$WALLPAPER_PATH" ]]; then
+    if [[ "$SELECTED" == *L.png ]]; then
+        matugen image --show-colors "$WALLPAPER_PATH" -m light
+    else
+        matugen image --show-colors "$WALLPAPER_PATH" -m dark
+    fi
 fi
