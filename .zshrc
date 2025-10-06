@@ -17,10 +17,14 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
 # Aliases
-alias ls='ls --color'
+alias ls='ls -A --color'
 alias yay='paru -S'
 alias nay='paru -Rsn'
 alias hitme='paru -Syu'
+alias vim='nvim'
+alias vi='nvim'
+alias nv='nvim'
+alias snv='EDITOR=nvim sudoedit'
 
 # Snippets
 zinit snippet OMZP::sudo
