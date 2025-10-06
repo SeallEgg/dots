@@ -3,7 +3,7 @@
 * {
 	background-color: transparent; 
 	vertical-align: 0.5;
-	font: "Geist 16";
+	font: "SF Pro Display 16";
 	text-color: @on-surface; 
 }
 
@@ -23,7 +23,7 @@ prompt {
 	border-radius: 12px;
 	margin: 0 6 0 0;
 	padding: 8 10;
-	font: "Geist Bold 16";
+	font: "SF Pro Rounded Bold 20";
 }
 
 listview {
