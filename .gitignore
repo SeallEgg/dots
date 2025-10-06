@@ -10,6 +10,7 @@ micro/backups
 colors.conf
 colors.rasi
 colors.json
+.config/quickshell/settings/colors.json
 
 # Kando
 .config/kando/session
