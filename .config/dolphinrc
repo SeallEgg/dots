@@ -9,7 +9,6 @@ ShowSortBy=false
 ShowViewMode=false
 
 [General]
-LockPanels=false
 ShowFullPathInTitlebar=true
 ShowStatusBar=FullWidth
 Version=202
