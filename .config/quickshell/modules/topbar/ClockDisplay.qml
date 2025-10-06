@@ -7,6 +7,8 @@ Item {
     implicitHeight: parent.height
     implicitWidth: parent.width
 
+    property var size: "14"
+
     SystemClock {
         id: clock
         precision: SystemClock.Minutes
@@ -15,9 +17,9 @@ Item {
     Text {
     id: clockText
     text: Qt.formatDateTime(clock.date, "hh:mm")
-    font.family: "Geist"
+    font.family: "SF Pro Rounded"
     font.weight: 500
-    font.pointSize: 14
+    font.pointSize: parent.size
     color: Theme.palette.primary
     anchors.centerIn: parent
     }

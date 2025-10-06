@@ -1,12 +1,12 @@
 import Quickshell
 import QtQuick
 
-import "components"
-import "components/topbar"
-import "components/bottombar"
+
+import "modules/topbar"
+import "modules/bottombar"
 
 import "settings"
 
-Scope{
+ShellRoot{
     TopBar{}
 }

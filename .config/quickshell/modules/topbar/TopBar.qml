@@ -3,33 +3,20 @@ import Quickshell.Widgets
 import QtQuick
 import QtQuick.Shapes
 import QtQuick.Effects
+import Qt5Compat.GraphicalEffects
 
 import "root:/common"
 import "root:/settings"
-import "root:/assets"
 
 Scope{
-    property int barHeight: 40
-
-    property int centerWidth: 500
-    property int leftWidth: 200
-    property int rightWidth: 200
-
-    property int cornerHeight: 40
+    property int barHeight: 35
+    property int barPadding: barHeight/2
     property var backgroundColor: Theme.palette.surface
-
-    Image{
-    id: logo
-    source: "root:/assets/arch-linux-48.svg"
-    visible: false
-    sourceSize: Qt.size(48, 48)
-    height: 30; width: 30
-    }
 
     PanelWindow {
             id: topBar
             color: 'transparent'
-            exclusiveZone: barHeight      
+            exclusiveZone: barHeight 
             implicitHeight: barHeight
             anchors {
                 top: true
@@ -42,21 +29,15 @@ Scope{
                 color: backgroundColor
                 anchors.left: parent.left
                 Row{
-                    height: barHeight
-                    
-                    Item{
-                        id: cornerIcon
+                    height: barHeight 
+                    Text{ 
+                        text: "󰣇"
+                        font.family: "Maple Mono NF"
                         height: barHeight
-                        width: 50
-
-                        MultiEffect{
-                            source: logo
-                            visible: true
-                            height: 30; width: 30
-                            anchors.centerIn: parent
-                            colorization: 1
-                            colorizationColor: Theme.palette.primary
-                        }
+                        leftPadding: barPadding
+                        anchors.verticalCenter: topBar.verticalCenter
+                        font.pointSize: barHeight*0.6   
+                        color: Theme.palette.primary
                     }
                 }
             }
@@ -71,8 +52,8 @@ Scope{
                    anchors.fill: parent
                     corners: [0, 1]
                     cornerType: "cubic"
-                    cornerHeight: 40
-                    cornerWidth: 50
+                    cornerHeight: barHeight
+                    cornerWidth: barPadding*3
                     color: backgroundColor
                 }
             }
@@ -83,7 +64,7 @@ Scope{
                 anchors.centerIn: parent
                 Row{
                     height: barHeight
-                    ClockDisplay{width: 400}
+                    ClockDisplay{width: 60; size: barHeight/2}
                 }
             }
 
@@ -97,8 +78,8 @@ Scope{
                     anchors.fill: parent
                     corners: [0, 1]
                     cornerType: "cubic"
-                    cornerHeight: 40
-                    cornerWidth: 50
+                    cornerHeight: barHeight
+                    cornerWidth: barPadding*3
                     color: backgroundColor
                 }
             }
@@ -109,7 +90,7 @@ Scope{
                 anchors.right: parent.right
                 Row{
                     height: barHeight
-                    Tray {width: 90}
+                    Tray {rightPadding: barPadding}
                 }
             }
     }
